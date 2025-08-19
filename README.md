@@ -85,6 +85,16 @@ Fill these if you want to validate configuration (no sending performed in protot
 - `TWILIO_AUTH_TOKEN`
 - `TWILIO_FROM` (Twilio Sandbox WhatsApp from number like `whatsapp:+14155238886`)
 
+You can verify configuration without sending messages via:
+
+- `GET /api/twilio/status` — returns `{ configured, from, fromValid, canInitializeClient }`
+
+Twilio Sandbox quick steps:
+
+- In Twilio Console, open WhatsApp Sandbox and copy the join code into your phone's WhatsApp to opt-in.
+- Set `TWILIO_FROM` to the sandbox number Twilio shows (must start with `whatsapp:`).
+- Use your Account SID/Auth Token in the backend `.env` to allow client initialization.
+
 ---
 
 ## API Overview

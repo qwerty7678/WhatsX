@@ -7,6 +7,7 @@ const { authRouter } = require('./routes/auth');
 const { usersRouter } = require('./routes/users');
 const { templatesRouter } = require('./routes/templates');
 const { utilsRouter } = require('./routes/utils');
+const { twilioRouter } = require('./routes/twilio');
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.use('/api/auth', authRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/templates', templatesRouter);
 app.use('/api/utils', utilsRouter);
+app.use('/api/twilio', twilioRouter);
 
 // Example scheduled job (hourly): rotate a trivial log/heartbeat
 cron.schedule('0 * * * *', () => {
